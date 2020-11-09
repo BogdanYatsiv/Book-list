@@ -10,40 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BookLib.Entities;
 
 namespace BookLib
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        BookLibContext DataBase;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        public string[] RegistrationContainerInfo;
-
-        public User NewUser { get; set; }
-        private void RegistrationButton(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            NewUser = new User
-            {
-                
-            };
-            
-            MessageBox.Show("You have been successfully registered");
+            AddBookWindow bookWindow = new AddBookWindow();
+            bookWindow.Show();
         }
 
-        private void TextBox_LoginEntering(object sender, TextChangedEventArgs e)
+        private void DelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //викликає вікно де обираємо яку книгу видалити
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿<Window x:Class="BookLib.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookLib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="650">
+    <Grid Margin="0,0,0.2,0.4" RenderTransformOrigin="0.72,0.499">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="492*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="625*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Login1" Content="Log in" HorizontalAlignment="Left" Margin="230,185,0,0" VerticalAlignment="Top" Width="154" Click="login_Click" Height="51" Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="loginTextBox" HorizontalAlignment="Left" Height="34" Margin="218,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Grid.Column="1" Grid.Row="3"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="157,69,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" RenderTransformOrigin="0.667,1.654"/>
+        <TextBox x:Name="passwordTextBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" Margin="218,120,0,0" Grid.Column="1" Grid.Row="3"/>
+        <Label Content="Password
+               " HorizontalAlignment="Left" Margin="139,120,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1" Grid.Row="3"/>
+
+    </Grid>
+</Window>

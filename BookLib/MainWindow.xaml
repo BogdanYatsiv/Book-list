@@ -5,22 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookLib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="650">
-    <Grid Margin="0,0,0.2,0.4">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="36*"/>
-            <ColumnDefinition Width="625*"/>
-        </Grid.ColumnDefinitions>
-        <Button Content="Registration" HorizontalAlignment="Left" Margin="217.5,403,0,0" VerticalAlignment="Top" Width="154" Click="RegistrationButton" Height="51" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="217.5,124,0,0" TextWrapping="Wrap" Text="textBox1" VerticalAlignment="Top" Width="182" TextChanged="TextBox_LoginEntering" Grid.Column="1"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="156.5,124,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" Margin="217.5,187,0,0" Grid.Column="1"/>
-        <Label Content="Password
-               " HorizontalAlignment="Left" Margin="136.5,187,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" Margin="217.5,248,0,0" Grid.Column="1"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="156.5,248,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="154.5,312,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <TextBox HorizontalAlignment="Left" Height="34" Margin="217.5,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" Grid.Column="1"/>
+        Title="MainWindow" Height="450" Width="321">
+    <Window.Resources>
+        <DataTemplate x:Key="BooksDataTemplate">
+            <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" Width="370">
+                <Grid Margin="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock FontWeight="Bold" Text="{Binding Path=BookName, Converter={StaticResource StringUpperConverter}}"/>
+                    
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Button Content="Add Book" HorizontalAlignment="Left" Margin="199,360,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="AddButton_Click"/>
+        <Button Content="Delete Book" HorizontalAlignment="Left" Margin="35,360,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="DelButton_Click"/>
+        <ListBox Name="Books" Margin="10,10,10,89" ItemTemplate="{StaticResource BooksDataTemplate}"/>
 
     </Grid>
 </Window>
